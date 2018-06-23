@@ -25,9 +25,9 @@ app.use((req, res, next) => {
 //
 //
 //SITE MAINTENANCE OVERRIDE CODE
-app.use((req, res, next) => {
-    res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs');
+// });
 //
 //
 
@@ -55,6 +55,12 @@ app.get('/about', (req, res) => {
 
 app.get('/home', (req, res) => {
     res.send('This is my home page, welcome!');
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
+    });
 });
 
 app.get('/bad', (req, res) => {
